@@ -13,6 +13,8 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
         <link rel="stylesheet" href="neucha/fonts.css">
+        <link rel="stylesheet" href="anonymous_pro/fonts.css">
+        <link rel="stylesheet" href="css/custom.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -22,15 +24,168 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+        <style></style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Автоматизируй это. Гиперавтоматизированный пайплайн</section>
+				<section>
+                    <h1>
+                        Автоматизируй это.
+                    </h1>
+                    <p>
+                    Гиперавтоматизированный пайплайн
+                    </p>
+                </section>
+                <section>
+                    <h2 class="mono no-fear">
+                    НИ<br>СЫ
+                    </h2>
+                    <p class="fragment">
+                     больше автоматизации &mdash; меньше страха
+                    </p>
+                    <aside class=notes>
+                        Опрос, кто боится коммитить?
+                        Код в ветке поддерживает один разработчик, код в мастере вся команда
+                        Чаще коммитить и выкатывать лучше
+                    </aside>
+                </section>
+                <section>
+                    <h2 class="mono no-fear">
+                    ФИЛ<br>ЬТР
+                    </h2>
+                     <p class="fragment">
+                         больше автоматизации &mdash; лучше код
+                     </p>
+                    <aside class=notes>
+                        Чем больше на пути автоматизированныз проверок, тем  меньше багов
+                        Чем больше проверок, тем качественнее код
+                    </aside>
+                </section>
+                <section>
+                    <h2 class="mono no-fear">
+                        Кла<br>
+                        сси<br>
+                        ка
+                    </h2>
+                </section>
+                <section>
+                    <p>
+                    Статический анализ
+                    </p>
+                    <ul>
+                        <li class="fragment">Проверка компилятором</li>
+                        <li class="fragment">Линтеры</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Тесты</h1>
+                </section>
+                <section>
+                    <ul>
+                        <li class="fragment">Юнит тесты</li>
+                        <li class="fragment">Selenium</li>
+                        <li class="fragment">
+                            Интеграционные
+                            <sup>*</sup>
+                        </li>
+                        <li class="fragment">
+                            Функциональные
+                            <sup>*</sup>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <p>
+                        Тесты никто не пишет
+                    </p>
+                    <p class="fragment">Статический анализ не находит ошибок</p>
+                </section>
+                <section>
+                    Покрытие
+                    <p>//todo
+                    минимальное значение покрытия
+                    </p>
+                </section>
+                <section>
+                    <p>Тест на каждый компонент</p>
+                    <p>
+                        Каждый компонент должен как минимум ренедриться
+                    </p>
+                    <p>JEST снапшоты</p>
+                </section>
+                <section>
+                    <p>
+                        На каждые компонент должен быть тест
+                    </p>
+                    <p>
+                        Проверка на наличие снашотного теста
+                        https://github.com/SamVerschueren/clinton
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        Правильный формат описания теста
+                    </p>
+                </section>
+                <section>
+                    testcontainters
+                </section>
+                <section>
+                    cypress
+                </section>
+                <section>
+                    <h1>
+                        Линтеры
+                    </h1>
+                </section>
+                <section>
+                    <p>
+                        Название переменных
+                    </p>
+                    <ul>
+                        <li class="fragment">boolean - начинается с is or has</li>
+                        <li class="fragment">method - глагол</li>
+                        <li class="fragment">property - существительное</li>
+                    </ul>
+                </section>
+                <section>
+                    Локализация
+                    <p>
+                        пример с реактом
+                    </p>
+                </section>
+                <section>
+                    package.json
+                </section>
+                <section>
+                    Структура проекта
+                </section>
+                <section>
+COMMIT
+https://github.com/conventional-changelog/commitlint
+                </section>
+                <section>
+                    Prettier
+                </section>
+                <section>
+                    Дубликация
+                    <p>
+                    https://github.com/codeclimate/codeclimate-duplication
+                    </p>
+                </section>
+                <section>
+                    <p>Выводы</p>
+                    <ul>
+                        <li>Вместо обучения</li>
+                        <li>Повышение качества</li>
+                        <li>Ускорение разработки</li>
+                        <li>
+                            Каждый случай автоматизации уникален
+                        </li>
+                    </ul>
+                </section>
 			</div>
-            <section>
-
-            </section>
 		</div>
 
 		<script src="js/reveal.js"></script>
@@ -40,6 +195,7 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+                hash: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
