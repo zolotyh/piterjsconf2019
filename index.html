@@ -38,81 +38,124 @@
                     </p>
                 </section>
                 <section>
-                    <h2 class="mono no-fear">
-                    НИ<br>СЫ
+                    <h2>
+                        Естественный отбор
+                    </h2>
+                    <ul>
+                        <li class="fragment">Работает не только с обезьянами</li>
+                        <li class="fragment">Не работает без обратной связи</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Антихрупкость</h2>
+                    <ul>
+                        <li class="fragment">Много маленьких проблем лучше, чем одна большая</li>
+                        <li class="fragment">Чем дольше идея успешна, тем больше она проживет</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>
+                        CI
                     </h2>
                     <p class="fragment">
-                     больше автоматизации &mdash; меньше страха
+                        Continuous Integration
                     </p>
-                    <aside class=notes>
-                        Опрос, кто боится коммитить?
-                        Код в ветке поддерживает один разработчик, код в мастере вся команда
-                        Чаще коммитить и выкатывать лучше
-                    </aside>
                 </section>
                 <section>
-                    <h2 class="mono no-fear">
-                    ФИЛ<br>ЬТР
+                    <h2>
+                        CD
                     </h2>
-                     <p class="fragment">
-                         больше автоматизации &mdash; лучше код
-                     </p>
-                    <aside class=notes>
-                        Чем больше на пути автоматизированныз проверок, тем  меньше багов
-                        Чем больше проверок, тем качественнее код
-                    </aside>
+                    <p class="fragment">
+                    Continuous delivery
+                    </p>
                 </section>
                 <section>
-                    <h2 class="mono no-fear">
-                        Кла<br>
-                        сси<br>
-                        ка
+                    <h2>
+                        Про англицизмы и пайплайны
                     </h2>
                 </section>
                 <section>
-                    <p>
-                    Статический анализ
+                    <img src="img/cicd_pipeline_infograph.png" alt="">
+                    <p class="fragment">
+                        Что здесь автоматизировано?
                     </p>
+                </section>
+                <section>
+                    <h2>
+                        Автоматический vs Автоматизированный
+                    </h2>
+                    <p class="fragment">В чем разница?</p>
+                </section>
+                <section>
+                    А что если увеличить степень автоматизации?
+                </section>
+                <section>
+                    <h2>Виды тестов</h2>
                     <ul>
-                        <li class="fragment">Проверка компилятором</li>
-                        <li class="fragment">Линтеры</li>
+                        <li class="fragment">Что-то на Jest <span class="fragment">(напишем потом)</span></li>
+                        <li class="fragment">Кто-то что-то там на Selenium <span class="fragment">(все время падают)</span></li>
                     </ul>
                 </section>
                 <section>
-                    <h1>Тесты</h1>
-                </section>
-                <section>
-                    <ul>
-                        <li class="fragment">Юнит тесты</li>
-                        <li class="fragment">Selenium</li>
-                        <li class="fragment">
-                            Интеграционные
-                            <sup>*</sup>
-                        </li>
-                        <li class="fragment">
-                            Функциональные
-                            <sup>*</sup>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <p>
-                        Тесты никто не пишет
-                    </p>
-                    <p class="fragment">Статический анализ не находит ошибок</p>
-                </section>
-                <section>
-                    Покрытие
-                    <p>//todo
-                    минимальное значение покрытия
+                    <h2>
+                        Покрытие
+                    </h2>
+                    <p class="fragment">
+                        <a href="https://istanbul.js.org/">istanbul.js.org</a>
                     </p>
                 </section>
                 <section>
-                    <p>Тест на каждый компонент</p>
-                    <p>
+                    <img src="img/nyc.png" alt="">
+                </section>
+                <section>
+                    <pre><code class="json" data-trim data-noescape>
+{
+    coverageThreshold: {
+        global: {
+            branches: 23,
+            functions: 23,
+            lines: 23,
+            statements: 23,
+        },
+    }
+}
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Smoke тесты</h2>
+                    <p class="fragment">
                         Каждый компонент должен как минимум ренедриться
                     </p>
-                    <p>JEST снапшоты</p>
+                </section>
+                <section>
+                    JEST снапшоты
+                    <pre><code data-trim data-noescape>
+it('renders correctly', () => {
+  const tree = renderer
+    .create(<Link page="http://www.facebook.com">Facebook</Link>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+                    </code></pre>
+                </section>
+                <section>
+                    <pre><code class="javascript" data-trim>
+exports[`renders correctly 1`] = `
+<a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Facebook
+</a>
+`;
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>
+                        А если никто не будет писать тесты?
+                    </h2>
                 </section>
                 <section>
                     <p>
@@ -173,6 +216,9 @@ https://github.com/conventional-changelog/commitlint
                     <p>
                     https://github.com/codeclimate/codeclimate-duplication
                     </p>
+                </section>
+                <section>
+                    Тестирование != отсутсвие багов
                 </section>
                 <section>
                     <p>Выводы</p>
